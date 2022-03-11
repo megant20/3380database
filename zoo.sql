@@ -20,6 +20,16 @@ CREATE TABLE attractions (
     FOREIGN KEY (locationID) REFERENCES location(locationID)
 );
 
+CREATE TABLE animals (
+    animalID INT NOT NULL AUTO_INCREMENT,
+    attractionID INT NOT NULL AUTO_INCREMENT,
+    species varchar(15),
+    gender varchar(15),
+    DOB varchar(10),
+    PRIMARY KEY (animalID)
+    FOREIGN KEY (attractionID) REFERENCES location(locationID)
+);
+
 
 
 
