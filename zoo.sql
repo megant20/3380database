@@ -37,7 +37,7 @@ CREATE TABLE 'animal' (
     'name' varchar(30),
     'species' varchar(15),
     'gender' varchar(15),
-    'DOB' varchar(10), --do more with this later
+    'DOB' varchar(8), --do more with this later
     PRIMARY KEY ('animalID'),
     FOREIGN KEY ('attractionID') REFERENCES attraction('attractionID')
 );
@@ -56,7 +56,24 @@ CREATE TABLE 'employee' (
     FOREIGN KEY ('managerID') REFERENCES manager('managerID')
 );
 
---users giftshops still left
+CREATE TABLE 'gift_shops' (
+    'giftshopID' INT NOT NULL AUTO_INCREMENT,
+    'donations' DECIMAL(15,2) NOT NULL DEFAULT 0,
+    'product_sales' DECIMAL(15,2) NOT NULL DEFAULT 0,
+    PRIMARY KEY ('giftshopID')
+);
+    
+CREATE TABLE 'users' (
+    'name' varchar(30),
+    'credit_card_info' varchar(16), --do more with this later
+    'age' INT,
+    'phone_number' varchar(10) NOT NULL, --do more with this later
+    'email' varchar(45) NOT NULL,
+    'gender' varchar(15),
+    'tickets_purchased' INT NOT NULL DEFAULT 0,
+    PRIMARY KEY ('phone_number', 'email')
+ );
+--users
 
 
 
