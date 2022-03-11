@@ -1,6 +1,6 @@
 CREATE DATABASE zoo;
 
-USE 'classicmodels'
+USE 'zoo'
 
 DROP TABLE IF EXISTS 'location';
 
