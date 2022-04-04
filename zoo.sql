@@ -20,8 +20,9 @@ CREATE TABLE manager (
     locationID INT NOT NULL,
     name varchar(30) NOT NULL,
     managerID INT NOT NULL AUTO_INCREMENT,
-    ssn INT NOT NULL, ##do more with this later
-    data_hired varchar(10), ##do more with this later
+    ssn INT NOT NULL,
+    data_hired varchar(10),
+    age INT,
     PRIMARY KEY (managerID, ssn),
     CONSTRAINT manager_ibfk_1 FOREIGN KEY (departmentID) REFERENCES department (departmentID),
     CONSTRAINT manager_ibfk_2 FOREIGN KEY (locationID) REFERENCES location (locationID)
@@ -41,7 +42,7 @@ CREATE TABLE animal (
     name varchar(30),
     class ENUM('Mammal','Bird','Amphibian','Fish','Reptile','Invertebrate'),
     gender ENUM('Male','Female','Other'),
-    DOB varchar(8), ##do more with this later
+    DOB varchar(8),
     PRIMARY KEY (animalID),
     CONSTRAINT animal_ibfk_1 FOREIGN KEY (attractionID) REFERENCES attraction (attractionID)
 );
@@ -52,8 +53,9 @@ CREATE TABLE employee (
     managerID INT NOT NULL,
     employeeID INT NOT NULL AUTO_INCREMENT,
     name varchar(30) NOT NULL,
-    ssn INT NOT NULL, ##do more with this later
-    data_hired varchar(10), ##do more with this later
+    ssn INT NOT NULL,
+    data_hired varchar(10),
+    age INT,
     PRIMARY KEY (employeeID, ssn),
     CONSTRAINT employee_ibfk_1 FOREIGN KEY (attractionID) REFERENCES attraction (attractionID),
     CONSTRAINT employee_ibfk_2 FOREIGN KEY (locationID) REFERENCES location (locationID),
@@ -69,9 +71,9 @@ CREATE TABLE gift_shop (
 
 CREATE TABLE user (
     user_name varchar(30),
-    credit_card_info varchar(16), ##do more with this later
+    credit_card_info varchar(16),
     age INT,
-    phone_number varchar(10) NOT NULL, ##do more with this later
+    phone_number varchar(10) NOT NULL,
     email varchar(45) NOT NULL,
     gender ENUM('Male','Female','Other'),
     tickets_purchased INT NOT NULL DEFAULT 0,
