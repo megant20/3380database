@@ -14,6 +14,7 @@
 
 
 <body background="">
+	
 
 	<div class="wrapper">
 		<header>
@@ -44,12 +45,12 @@
 			?>
 			        <table width="100%" height="70px" border="3">
 						<nav>
-							<tr bgcolor="black">
-								<td width="20%" align="center"><b><font color="black"><a href="index.php">HOME</a></font></b></td>
-								<td width="20%" align="center"><b><font color="white"><a href="users_login.php">LOGIN</a></td>
-								<td width="20%"align="center"><b><font color="white"><a href="registration.php">SIGN-UP</a></td>
+							<tr bgcolor="green">
+								<td width="20%" align="center"><b><a style = "color: black; text-decoration: none;" href="index.php">HOME</a></font></b></td>
+								<td width="20%" align="center"><b><a style = "color: black; text-decoration: none;" href="users_login.php">LOGIN</a></td>
+								<td width="20%"align="center"><b><a style = "color: black; text-decoration: none;" href="registration.php">SIGN-UP</a></td>
 
-								<td width="20%"align="center"><b><font color="white"><a href="footer.php">ABOUT</a></td>
+								<td width="20%"align="center"><b><a style = "color: black; text-decoration: none;" href="footer.php">ABOUT</a></td>
 							</tr>
 						</nav>
 					</table>
