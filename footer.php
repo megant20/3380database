@@ -11,25 +11,63 @@
 
 </head>
 <body>
-<footer style="background-color: black; ">
-	<br>
-	<h3 style="color:white;text-align: center;">Contact us through social media</h3><br>
+<style>
+		h1 {
+			padding: 5px;
+		}
+		footer {
+			padding: 15px;
+		}
+		div {
+			padding: 0;
+		}
+		ul {
+			padding: 0;
+			list-style-type: none;
+		}
+		ul a {
+			color: lime;
+			text-decoration: none;
+		}
 
-	<div style="margin:0px 570px;" align="center">
+		li {
+			padding: 5px;
+		}
+		.clearer {
+			height: 0;
+			clear: both;
+		}
 
-		<a href="#" class="fa fa-facebook">Facebook</a>
-		<a href="#" class="fa fa-twitter">Twitter</a>
-		<a href="#" class="fa fa-google">Gmail</a>
-		<a href="#" class="fa fa-instagram">Instagram</a>
-		<a href="#" class="fa fa-yahoo">yahoo</a>
+		.rightfoot {
+			float: right;
+		}
+
+		.leftfoot {
+			float: left;
+		}
+	</style>
+<footer style="background-color: green; ">
+	<h1 style="text-align: center; color: black;">Contact us</h1>
+
+	<div align="center">
+		<ul class = "leftfootul">
+			<li class = "leftfoot"><a href="#" class="fa fa-facebook leftfoot">&nbsp Online.Zoo@gmail.com</a></li>
+		</ul>
+		<ul class = "rightfootul">
+			<li class = "rightfoot"><a href="#" class="fa fa-facebook">Facebook</a></li>
+			<li class = "rightfoot"><a href="#" class="fa fa-twitter rightfoot">Twitter</a></li>
+			<li class = "rightfoot"><a href="#" class="fa fa-google rightfoot">Gmail</a></li>
+			<li class = "rightfoot"><a href="#" class="fa fa-instagram rightfoot">Instagram</a></li>
+			
+		</ul>
+		<div class = "clearer"></div>
 	</div>
 
 	<br>
-	<p style="color:white;text-align: center;">
-		<br>
-		Email:&nbsp Online.Zoo@gmail.com <br><br>
+	<!--<p style="color:white;text-align: center;">
+		Email:&nbsp Online.Zoo@gmail.com
 		Mobile:&nbsp &nbsp +17139*******
-	</p>
+	</p>-->
 </footer>
 </body>
 </html>
