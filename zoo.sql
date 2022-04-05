@@ -22,7 +22,6 @@ CREATE TABLE department (
 INSERT INTO department(title) VALUES
 ('Maintenance'),
 ('Zoology'),
-('Veterinary'),
 ('Marketing'),
 ('Tourism');
 
@@ -46,7 +45,7 @@ INSERT INTO manager(name,ssn,date_hired,age,departmentID,locationID) VALUES
 	('Aaron Withers',401912318,'05/15/2015',29,
 		(SELECT departmentID FROM department WHERE title ='Marketing'),(SELECT locationID FROM location WHERE title = 'Feline Enclosures')),
 	('Luke Berry',121495150,'12/04/2021',35,
-		(SELECT departmentID FROM department WHERE title ='Veterinary'),(SELECT locationID FROM location WHERE title = 'African Forest')),
+		(SELECT departmentID FROM department WHERE title ='Zoology'),(SELECT locationID FROM location WHERE title = 'African Forest')),
 	('Rebecca Lux',157903218,'02/18/2012',48,
 		(SELECT departmentID FROM department WHERE title ='Tourism'),(SELECT locationID FROM location WHERE title = 'South American Jungle'));	
 
