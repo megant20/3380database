@@ -12,7 +12,6 @@ INSERT INTO location(title) VALUES
 ('African Forest'),
 ('Primate Land'),
 ('Feline Enclosures'),
-('Wetlands'),
 ('South American Jungle');
 
 CREATE TABLE department (
@@ -47,7 +46,7 @@ INSERT INTO manager(name,ssn,date_hired,age,departmentID,locationID) VALUES
 	('Aaron Withers',401912318,'05/15/2015',29,
 		(SELECT departmentID FROM department WHERE title ='Marketing'),(SELECT locationID FROM location WHERE title = 'Feline Enclosures')),
 	('Luke Berry',121495150,'12/04/2021',35,
-		(SELECT departmentID FROM department WHERE title ='Veterinary'),(SELECT locationID FROM location WHERE title = 'Wetlands')),
+		(SELECT departmentID FROM department WHERE title ='Veterinary'),(SELECT locationID FROM location WHERE title = 'African Forest')),
 	('Rebecca Lux',157903218,'02/18/2012',48,
 		(SELECT departmentID FROM department WHERE title ='Tourism'),(SELECT locationID FROM location WHERE title = 'South American Jungle'));	
 
@@ -64,8 +63,8 @@ INSERT INTO attraction(purchases,locationID) VALUES
     (3424.15, (SELECT locationID FROM location WHERE title ='Feline Enclosures')),
     (5612.54, (SELECT locationID FROM location WHERE title ='Primate Land')),
     (15320, (SELECT locationID FROM location WHERE title ='African Forest')),
-    (234.36, (SELECT locationID FROM location WHERE title ='Wetlands')),
-    (1145.31, (SELECT locationID FROM location WHERE title ='Wetlands'));
+    (234.36, (SELECT locationID FROM location WHERE title ='South American Jungle')),
+    (1145.31, (SELECT locationID FROM location WHERE title ='Feline Enclosures'));
 
 CREATE TABLE animal (
     animalID INT NOT NULL AUTO_INCREMENT,
