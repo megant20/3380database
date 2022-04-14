@@ -9,10 +9,10 @@ CREATE TABLE location (
     PRIMARY KEY (locationID)
 );
 INSERT INTO location(title) VALUES 
-('African Forest'),
-('Primate Land'),
-('Feline Enclosures'),
-('South American Jungle');
+('african forest'),
+('australian wildland'),
+('polar iceland'),
+('south american jungle');
 
 CREATE TABLE department (
     departmentID INT NOT NULL AUTO_INCREMENT,
@@ -20,10 +20,10 @@ CREATE TABLE department (
     PRIMARY KEY (departmentID)
 );
 INSERT INTO department(title) VALUES
-('Maintenance'),
-('Zoology'),
-('Marketing'),
-('Tourism');
+('maintenance'),
+('veterinary'),
+('marketing'),
+('tourism');
 
 CREATE TABLE manager (
     departmentID INT NOT NULL,
@@ -37,46 +37,55 @@ CREATE TABLE manager (
     CONSTRAINT manager_ibfk_1 FOREIGN KEY (departmentID) REFERENCES department (departmentID),
     CONSTRAINT manager_ibfk_2 FOREIGN KEY (locationID) REFERENCES location (locationID)
 );
-INSERT INTO manager(name,ssn,date_hired,age,departmentID,locationID) VALUES 
-	('John Smith',123456789,'01/01/2000',40,
-		(SELECT departmentID FROM department WHERE title ='Maintenance'),(SELECT locationID FROM location WHERE title = 'African Forest')),
-	('Jane Lowry',987654321,'10/10/2020',20,
-		(SELECT departmentID FROM department WHERE title ='Zoology'),(SELECT locationID FROM location WHERE title = 'Primate Land')),
-	('Aaron Withers',401912318,'05/15/2015',29,
-		(SELECT departmentID FROM department WHERE title ='Marketing'),(SELECT locationID FROM location WHERE title = 'Feline Enclosures')),
-	('Luke Berry',121495150,'12/04/2021',35,
-		(SELECT departmentID FROM department WHERE title ='Zoology'),(SELECT locationID FROM location WHERE title = 'African Forest')),
-	('Rebecca Lux',157903218,'02/18/2012',48,
-		(SELECT departmentID FROM department WHERE title ='Tourism'),(SELECT locationID FROM location WHERE title = 'South American Jungle'));	
+INSERT INTO manager(name,ssn,date_hired,departmentID,locationID) VALUES 
+	('john smith',123456789,'01/01/2000',
+		(SELECT departmentID FROM department WHERE title ='maintenance'),(SELECT locationID FROM location WHERE title = 'african forest')),
+	('jane lowry',987654321,'10/10/2020',
+		(SELECT departmentID FROM department WHERE title ='tourism'),(SELECT locationID FROM location WHERE title = 'australian wildland')),
+	('matt powers',353243986,'02/04/2019',
+		(SELECT departmentID FROM department WHERE title ='veterinary'),(SELECT locationID FROM location WHERE title = 'australian wildland')),
+	('aaron withers',401912318,'05/15/2015',
+		(SELECT departmentID FROM department WHERE title ='marketing'),(SELECT locationID FROM location WHERE title = 'polar iceland')),
+	('luke berry',121495150,'12/04/2021',
+		(SELECT departmentID FROM department WHERE title ='veterinary'),(SELECT locationID FROM location WHERE title = 'african forest')),
+	('kyle jasser',345872351,'06/25/2018',
+		(SELECT departmentID FROM department WHERE title ='tourism'),(SELECT locationID FROM location WHERE title = 'african forest')),
+	('peter alaniz',543442341,'11/12/2019',
+		(SELECT departmentID FROM department WHERE title ='marketing'),(SELECT locationID FROM location WHERE title = 'african forest')),
+	('rebecca lux',157903218,'02/18/2012',
+		(SELECT departmentID FROM department WHERE title ='tourism'),(SELECT locationID FROM location WHERE title = 'south american jungle')),
+	('donna west',762352342,'07/19/2013',
+		(SELECT departmentID FROM department WHERE title ='maintenance'),(SELECT locationID FROM location WHERE title = 'australian wildland'));
 
 CREATE TABLE attraction (
     attractionID INT NOT NULL AUTO_INCREMENT,
     locationID INT NOT NULL,
+    title varchar(30),
     purchases DECIMAL(15, 2) NOT NULL DEFAULT 0,
     PRIMARY KEY (attractionID),
     CONSTRAINT attraction_ibfk_1 FOREIGN KEY (locationID) REFERENCES location (locationID)
 );
-INSERT INTO attraction(purchases,locationID) VALUES
-	(1234.56, (SELECT locationID FROM location WHERE title ='African Forest')),
-    (426.90, (SELECT locationID FROM location WHERE title ='South American Jungle')),
-    (3424.15, (SELECT locationID FROM location WHERE title ='Feline Enclosures')),
-    (5612.54, (SELECT locationID FROM location WHERE title ='Primate Land')),
-    (15320, (SELECT locationID FROM location WHERE title ='African Forest')),
-    (234.36, (SELECT locationID FROM location WHERE title ='South American Jungle')),
-    (1145.31, (SELECT locationID FROM location WHERE title ='Feline Enclosures'));
-
+INSERT INTO attraction(title,purchases,locationID) VALUES
+	('forest animals',152, (SELECT locationID FROM location WHERE title ='african forest')),
+    ('jungle food court',1426.9, (SELECT locationID FROM location WHERE title ='south american jungle')),
+    ('iceland animals',87, (SELECT locationID FROM location WHERE title ='polar iceland')),
+    ('wildland animals',261, (SELECT locationID FROM location WHERE title ='australian wildland')),
+    ('forest food court',6320.43, (SELECT locationID FROM location WHERE title ='african forest')),
+    ('jungle food court',737.42, (SELECT locationID FROM location WHERE title ='south american jungle')),
+    ('iceland food court',1145.31, (SELECT locationID FROM location WHERE title ='polar iceland'));
+    
 CREATE TABLE animal (
     animalID INT NOT NULL AUTO_INCREMENT,
     attractionID INT NOT NULL,
     name varchar(30),
-    class ENUM('Mammal','Bird','Amphibian','Fish','Reptile','Invertebrate'),
-    gender ENUM('Male','Female','Other'),
-    DOB varchar(8),
+    class ENUM('mammal','bird','amphibian','fish','reptile','invertebrate'),
+    gender ENUM('male','female','other'),
+    DOB varchar(10),
     PRIMARY KEY (animalID),
     CONSTRAINT animal_ibfk_1 FOREIGN KEY (attractionID) REFERENCES attraction (attractionID)
 );
 	INSERT INTO animal(name,class,gender,DOB,attractionID) VALUES
-    ('Percy', 'Mammal', 'Male', '04/27/2020', (SELECT attracactionID FROM attraction WHERE title ='African Forest'));
+    ('percy', 'mammal', 'male', '04/27/2020', (SELECT attractionID FROM attraction WHERE title ='forest animals'));
 
 
 
