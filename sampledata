@@ -1,0 +1,43 @@
+INSERT INTO location(title) VALUES 
+('african forest'),
+('australian wildland'),
+('polar iceland'),
+('south american jungle');
+
+INSERT INTO department(title) VALUES
+('maintenance'),
+('veterinary'),
+('marketing'),
+('tourism');
+
+INSERT INTO manager(name,ssn,date_hired,departmentID,locationID) VALUES 
+	('john smith',123456789,'01/01/2000',
+		(SELECT departmentID FROM department WHERE title ='maintenance'),(SELECT locationID FROM location WHERE title = 'african forest')),
+	('jane lowry',987654321,'10/10/2020',
+		(SELECT departmentID FROM department WHERE title ='tourism'),(SELECT locationID FROM location WHERE title = 'australian wildland')),
+	('matt powers',353243986,'02/04/2019',
+		(SELECT departmentID FROM department WHERE title ='veterinary'),(SELECT locationID FROM location WHERE title = 'australian wildland')),
+	('aaron withers',401912318,'05/15/2015',
+		(SELECT departmentID FROM department WHERE title ='marketing'),(SELECT locationID FROM location WHERE title = 'polar iceland')),
+	('luke berry',121495150,'12/04/2021',
+		(SELECT departmentID FROM department WHERE title ='veterinary'),(SELECT locationID FROM location WHERE title = 'african forest')),
+	('kyle jasser',345872351,'06/25/2018',
+		(SELECT departmentID FROM department WHERE title ='tourism'),(SELECT locationID FROM location WHERE title = 'african forest')),
+	('peter alaniz',543442341,'11/12/2019',
+		(SELECT departmentID FROM department WHERE title ='marketing'),(SELECT locationID FROM location WHERE title = 'african forest')),
+	('rebecca lux',157903218,'02/18/2012',
+		(SELECT departmentID FROM department WHERE title ='tourism'),(SELECT locationID FROM location WHERE title = 'south american jungle')),
+	('donna west',762352342,'07/19/2013',
+		(SELECT departmentID FROM department WHERE title ='maintenance'),(SELECT locationID FROM location WHERE title = 'australian wildland'));
+    
+INSERT INTO attraction(title,purchases,locationID) VALUES
+	('forest animals',152, (SELECT locationID FROM location WHERE title ='african forest')),
+    ('jungle food court',1426.9, (SELECT locationID FROM location WHERE title ='south american jungle')),
+    ('iceland animals',87, (SELECT locationID FROM location WHERE title ='polar iceland')),
+    ('wildland animals',261, (SELECT locationID FROM location WHERE title ='australian wildland')),
+    ('forest food court',6320.43, (SELECT locationID FROM location WHERE title ='african forest')),
+    ('jungle food court',737.42, (SELECT locationID FROM location WHERE title ='south american jungle')),
+    ('iceland food court',1145.31, (SELECT locationID FROM location WHERE title ='polar iceland'));
+   
+INSERT INTO animal(name,class,gender,DOB,attractionID) VALUES
+    ('percy', 'mammal', 'male', '04/27/2020', (SELECT attractionID FROM attraction WHERE title ='forest animals'));
