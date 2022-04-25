@@ -5,13 +5,13 @@ This document will first go through navigating the Webpage and explaing function
 
 Wep page.
 
-Homepage of the WebApp contains links to the login, signup and about pages at the top right. Scrowing down, you get to view information on the Best Animals and an option to learn more by clicking of the Read More button. Futher down, you will be intoduced to the Giftshop and the click here button will redirect you to giftshop official page.
+Homepage of the WebApp contains links to the login, signup and about pages at the top right. Scrolling down, you get to view information on the Best Animals and an option to learn more by clicking of the Read More button. Futher down, you will be intoduced to the Giftshop and the click here button will redirect you to giftshop official page.
 First, the login page gives you the option to login as a user, admin, employee or if no acount exist, a link to the signup page and if you have trouble signing in, there is a forget password link which will allow to change your password after verifying  your identity.
   Admin_ 
   When you login as admin, you have access to:
     Your profile and it's modification.
     Employee list_ you can search through the list with a user name, Add Employee to the list and edit(Delete, modify) employee left righthand of your screen under menu.
-    Animal List_ search the list for Animal, Delete, Add and Edit Animals in the list.
+    Animal List_ search the list for Animal, Add Animals in the list.
     Report_ Displays the Total Users, Total Managers per Employees(in percentage), New Employees for a specific Department which will also be listed in Under Department.
     Manage ticket_ View all the available tickets and Tickets Sold found in the Menu of the the page.
   Employee_
